@@ -48,22 +48,29 @@ const jtrello = (function() {
 
   /* ============== Metoder för att hantera listor nedan ============== */
   function createList() {
-    event.preventDefault();
-    console.log("This should create a new list");
+    
+    //$(this).parents("new-list").append
+    console.log(this);
   }
 
   function deleteList() {
+
     console.log("This should delete the list you clicked on");
   }
 
   /* =========== Metoder för att hantera kort i listor nedan =========== */
   function createCard(event) {
     event.preventDefault();
-    console.log("This should create a new card");
+    var title =  $(this).children()[0].value;
+    var button = $("<button class='button delete'>X</button>");
+    button.on('click', deleteCard);
+    var liElement = $("<li class='card'></li>").html(button);
+    liElement.prepend(title);
+    $(this).parents("ul.list-cards").append(liElement);
   }
 
   function deleteCard() {
-    console.log("This should delete the card you clicked on");
+    $(this).parent().remove();
   }
 
   // Metod för att rita ut element i DOM:en
@@ -90,5 +97,7 @@ const jtrello = (function() {
 
 //usage
 $("document").ready(function() {
+
+  
   jtrello.init();
 });
