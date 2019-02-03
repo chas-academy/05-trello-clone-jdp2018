@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'public'),
-    publicPath: "./",
+    publicPath: path.resolve(__dirname, 'dist'),
     filename: "bundle.js",
     chunkFilename: '[name].js'
   },
@@ -51,6 +51,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.join(__dirname, 'public'),
+    watchContentBase: true,
     compress: true,
     port: 3000
   }

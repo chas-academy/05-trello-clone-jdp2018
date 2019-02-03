@@ -2,6 +2,7 @@ import $ from 'jquery';
 
 // require('webpack-jquery-ui');
 import '../css/styles.css';
+import { deflateRaw } from 'zlib';
 
 /**
  * jtrello
@@ -48,14 +49,12 @@ const jtrello = (function() {
 
   /* ============== Metoder för att hantera listor nedan ============== */
   function createList() {
-    
-    //$(this).parents("new-list").append
-    console.log(this);
+    var copyList = DOM.$columns.last().prev().clone(true)
+    copyList.prependTo(DOM.$columns.last());
   }
 
   function deleteList() {
-
-    console.log("This should delete the list you clicked on");
+    $(this).closest(".column").remove();
   }
 
   /* =========== Metoder för att hantera kort i listor nedan =========== */
@@ -67,6 +66,7 @@ const jtrello = (function() {
     var liElement = $("<li class='card'></li>").html(button);
     liElement.prepend(title);
     $(this).parents("ul.list-cards").append(liElement);
+    
   }
 
   function deleteCard() {
@@ -89,15 +89,17 @@ const jtrello = (function() {
     bindEvents();
   }
 
-  // All kod här
+  
   return {
     init: init
   };
 })();
 
-//usage
+
 $("document").ready(function() {
 
   
   jtrello.init();
 });
+
+
