@@ -73,6 +73,20 @@ const jtrello = (function() {
     $(this).parent().remove();
   }
 
+
+  
+  //widget
+  $( document ).ready(function() {
+    $('.colorButton').click(function() {
+      const randomColor = Math.floor(Math.random() * 256);
+      const color = '#' + randomColor;
+      $('body').css('#hquery', color);
+    });
+  });
+
+
+
+
   // Metod för att rita ut element i DOM:en
   function render() {}
 

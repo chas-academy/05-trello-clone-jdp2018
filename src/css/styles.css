@@ -1,6 +1,5 @@
 html,
 body {
-  background: #9999ff;
   margin: 0;
   padding: 30px 0 0;
   font-family: sans-serif;
@@ -67,6 +66,7 @@ input {
   white-space: normal;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   user-select: none;
+  
 }
 
 .list-header {
@@ -76,7 +76,7 @@ input {
   font-weight: bold;
   padding: 12px 10px;
   margin: 0;
-  color: #4d4d4d;
+  color: #e8491d;
 }
 
 .list-header .delete {
@@ -99,17 +99,20 @@ input {
 
 .list-cards .add-new {
   margin: 10px 0;
+  
 }
 
 .list-cards .add-new .button {
   width: 100%;
+
+
 }
 
 .card {
   text-decoration: none;
   display: flex;
   background: #fff;
-  color: #444;
+  color: #e8491d;
   padding: 6px 6px 6px 8px;
   font-size: 14px;
   border-radius: 3px;
@@ -175,6 +178,8 @@ input {
   justify-content: center;
   align-items: center;
   flex: 0 0 160px;
+  color: #e8491d;
+
 }
 
 .ui-sortable-placeholder {
@@ -189,4 +194,11 @@ input {
   cursor: grabbing;
   box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.3), 0px 0px 1px rgba(0, 0, 0, 0.5);
   transform: rotate(4deg);
+}
+.colorButton {
+  margin: 10px;
+  color: #e8491d;
+}
+.hquery{
+  text-align: center;
 }
