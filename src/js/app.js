@@ -1,5 +1,6 @@
 import $ from 'jquery';
-
+import 'jquery-ui/themes/base/all.css';
+import sortable from 'jquery-ui/ui/widgets/sortable';
 // require('webpack-jquery-ui');
 import '../css/styles.css';
 import { deflateRaw } from 'zlib';
@@ -33,7 +34,9 @@ const jtrello = (function() {
   }
 
   function createTabs() {}
-  function createDialogs() {}
+  function createDialogs() {
+    
+  }
 
   /*
   *  Denna metod kommer nyttja variabeln DOM för att binda eventlyssnare till
@@ -54,7 +57,7 @@ const jtrello = (function() {
   }
 
   function deleteList() {
-    $(this).closest(".column").remove();
+    $(this).closest(".column").slideToggle("explode");
   }
 
   /* =========== Metoder för att hantera kort i listor nedan =========== */
@@ -70,22 +73,18 @@ const jtrello = (function() {
   }
 
   function deleteCard() {
-    $(this).parent().remove();
+    $(this).parent().slideToggle("explode");
   }
-
-
   
-  //widget
-  $( document ).ready(function() {
-    $('.colorButton').click(function() {
-      const randomColor = Math.floor(Math.random() * 256);
-      const color = '#' + randomColor;
-      $('body').css('#hquery', color);
-    });
+  function sortable(){
+    $('.list-cards').sortable({connectWith: 'li'});
+    $('.board').sortable({connectWith: 'ul'});
+  }
+  $('.colorButton').click(function() {
+    const randomColor = Math.floor(Math.random() * 255);
+    const color = '#' + randomColor;
+    $('body').css('background-color', color);
   });
-
-
-
 
   // Metod för att rita ut element i DOM:en
   function render() {}
@@ -99,11 +98,9 @@ const jtrello = (function() {
     captureDOMEls();
     createTabs();
     createDialogs();
-
+    sortable();
     bindEvents();
   }
-
-  
   return {
     init: init
   };
@@ -111,8 +108,6 @@ const jtrello = (function() {
 
 
 $("document").ready(function() {
-
-  
   jtrello.init();
 });
 
