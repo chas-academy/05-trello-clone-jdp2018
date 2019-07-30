@@ -15,14 +15,14 @@ a:hover {
 }
 
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 ul li {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 input {
@@ -42,7 +42,7 @@ input {
 }
 
 .board {
-    height: 100vh;
+  height: 100vh;
 }
 
 .column {
@@ -66,7 +66,6 @@ input {
   white-space: normal;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   user-select: none;
-  
 }
 
 .list-header {
@@ -99,13 +98,10 @@ input {
 
 .list-cards .add-new {
   margin: 10px 0;
-  
 }
 
 .list-cards .add-new .button {
   width: 100%;
-
-
 }
 
 .card {
@@ -138,14 +134,9 @@ input {
   padding: 10px;
   z-index: 50;
 }
-
 .ui-dialog .ui-dialog-titlebar {
   font-weight: bold;
   margin-bottom: 10px;
-}
-
-.ui-dialog .ui-dialog-titlebar-close {
-  display: none;
 }
 
 .ui-dialog input {
@@ -153,7 +144,7 @@ input {
 }
 
 .ui-dialog button {
-  margin-right: 8px;
+  margin-left: 70px;
 }
 
 .ui-button,
@@ -179,7 +170,6 @@ input {
   align-items: center;
   flex: 0 0 160px;
   color: #e8491d;
-
 }
 
 .ui-sortable-placeholder {
@@ -198,20 +188,17 @@ input {
 .colorButton {
   margin: 10px;
 }
-.hquery{
+.hquery {
   text-align: center;
   color: #e8491d;
 }
 
-#one{
-  font-size: 18px;
+.ui-dialog-titlebar-close {
+  display: none;
+}
+.datepicker {
+  font-size: 20px;
   color: #e8491d;
 }
-#two{
-  font-size: 18px;
-  color: #e8491d;
-}
-#three{
-  font-size: 18px;
-  color: #e8491d;
-}
+
+
